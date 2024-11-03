@@ -1,0 +1,73 @@
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+    //   Human human1=new Human();
+    //   human1.Name="Farida";
+    //   human1.Surname="Shammadova";
+    //   human1.Age=20;
+       
+    //   Console.WriteLine($"Name: {human1.Name}, Surname: {human1.Surname}, Age: {human1.Age}");
+       
+      Student student1=new Student("Farida", "Shammadova", 20, 100, "PB503");
+       
+      student1.ShowFullData();
+    }
+}
+
+public class Human{
+    public string Name="Noname";
+    public string Surname="Surname";
+    public byte Age;
+    
+    public Human(){
+        
+    }
+    
+    public Human(string name) : this(){
+        Name=name;
+    }
+    
+    public Human(string name, string surname):this(name){
+        Surname=surname;
+    }
+    
+    public Human(string name, string surname, byte age):this(name, surname){
+        Age=age;
+    }
+}
+
+public class Student : Human{
+    public double Grant;
+    public string GroupNo;
+    
+    public Student():base(){
+        
+    }
+    
+    public Student(string name):base(name){
+        
+    }
+    
+    public Student(string name, string surname):base(name, surname){
+        
+    }
+    
+    public Student(string name, string surname, byte age):base(name, surname, age){
+        
+    }
+    
+    public Student(string name, string surname, byte age, double grant):this(name, surname, age){
+        Grant=grant;
+    }
+    
+    public Student(string name, string surname, byte age, double grant, string groupNo):this(name, surname, age, grant){
+        GroupNo=groupNo;
+    }
+    
+    public void ShowFullData(){
+        Console.WriteLine($"Name: {Name}, Surname: {Surname}, Age: {Age}, Grant:{Grant}, GroupNo: {GroupNo}");
+    }
+}
